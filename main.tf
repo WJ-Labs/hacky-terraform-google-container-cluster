@@ -25,6 +25,7 @@ resource "google_container_node_pool" "node_pool" {
   name     = each.value.name
   location = each.value.location
   cluster  = google_container_cluster.cluster.name
+
   autoscaling {
     min_node_count = each.value.min_node_count
     max_node_count = each.value.max_node_count
