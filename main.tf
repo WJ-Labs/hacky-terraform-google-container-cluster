@@ -33,5 +33,8 @@ resource "google_container_node_pool" "node_pool" {
 
   node_config {
     machine_type = each.value.machine_type
+    workload_metadata_config {
+      mode = "GKE_METADATA"
+    }
   }
 }
