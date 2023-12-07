@@ -20,6 +20,12 @@ variable "network" {
   default     = null
 }
 
+variable "deletion_protection" {
+  description = "Whether or not to allow Terraform to destroy the cluster."
+  type        = bool
+  default     = true
+}
+
 variable "initial_node_count" {
   description = "When variable node_pools is defined it will set an initial_node_count of 1."
   type        = number

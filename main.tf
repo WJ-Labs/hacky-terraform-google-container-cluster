@@ -10,6 +10,8 @@ resource "google_container_cluster" "cluster" {
     workload_pool = format("%s.svc.id.goog", var.project_id)
   }
 
+  deletion_protection = var.deletion_protection
+
   dynamic "node_config" {
     for_each = length(var.tags) > 0 ? [1] : [0]
     content {
